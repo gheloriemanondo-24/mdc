@@ -10,11 +10,7 @@ class ShrineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Shrine',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
       home: const LoginPage(),
     );
   }
@@ -24,7 +20,9 @@ class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+    State<LoginPage> createState() {
+    return _LoginPageState();
+  }
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -41,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
     if (usernameController.text.isEmpty || passwordController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("Please enter username and password"),
+          content: Text("Please enter Username and Password"),
         ),
       );
     } else {
@@ -67,25 +65,24 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
                 const Icon(
                   Icons.diamond_outlined,
-                  size: 60,
+                  size: 65,
                   color: Colors.black87,
                 ),
 
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
 
                 const Text(
                   "SHRINE",
                   style: TextStyle(
                     fontSize: 18,
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w500,
+                    letterSpacing: 8,
                   ),
                 ),
 
@@ -118,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                const SizedBox(height: 24),
+                const SizedBox(height: 25),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
